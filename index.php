@@ -1,5 +1,5 @@
 <?php
-include ('log-ip.php')
+//include ('log-ip.php')
 $today = date("F j, Y, g:i a");
 //$data = json_encode(array("headers" =&amp;amp;gt; getallheaders());
                           //, "server" =&amp;amp;gt; $_SERVER, "request" =&amp;amp;gt; $_REQUEST));
