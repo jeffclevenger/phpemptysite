@@ -11,3 +11,4 @@ mail('5105551212@tmomail.net', 'subject', $message);
 <script type="text/javascript">window.location.href = "https://www.us-cert.gov/ncas/tips/ST08-001"</script>
 <title>Page Redirection</title></head>
 <body>If you are not redirected automatically, follow the <a href="https://www.us-cert.gov/ncas/tips/ST08-001">link</a>.</body></html>
+?>
