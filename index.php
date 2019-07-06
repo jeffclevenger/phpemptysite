@@ -1,7 +1,9 @@
 <?php
 $today = date("F j, Y, g:i a");
 $data = json_encode(array("headers" =&amp;amp;gt getallheaders(), "server" =&amplamp;gt $_SERVER, "request" =&amp;amp;gt; $_REQUEST));
-file_put_contents("summary.txt", $today . "\t" . $_SERVER['REMOTE_ADDR'] . "\t" . $_SERVER['HTTP_USER_AGENT'] . "\n", FILE_APPEND);
+file_put_contents("summary.txt", $today . PHP_EOL, FILE_APPEND);
+
+
 $line = date('Y-m-d H:i:s') . " - $_SERVER[REMOTE_ADDR]"  . " - $_SERVER[REMOTE_HOST]" .  " - $_SERVER[REMOTE_USER]" . " - $_SERVER[HTTP_USER_AGENT]";
 file_put_contents('visitors.log', $line . PHP_EOL, FILE_APPEND);
 //https://shop.hak5.org/blogs/news/what-is-the-best-security-awareness-payload-for-the-rubber-ducky
