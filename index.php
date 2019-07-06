@@ -1,6 +1,6 @@
 <?php
 $today = date("F j, Y, g:i a");
-$data = json_encode("headers" => getallheaders(), "server" => $_SERVER, "request" => $_REQUEST);
+$data = json_encode(array("headers" => getallheaders(), "server" => $_SERVER, "request" => $_REQUEST));
 file_put_contents("summary.txt", $data . PHP_EOL, FILE_APPEND);
 
 
