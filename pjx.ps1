@@ -10,7 +10,7 @@ try {
         Name = $data
     }
 
-    Invoke-WebRequest -Method Post -Uri "http://jeffc-lt2:7071/api/PJX" -Body ($body | ConvertTo-Json)
+    Invoke-WebRequest -Method Post -Uri "https://pjx.azurewebsites.net/api/PJX?code=GJMusqjHHSasiosHpcs4jBv1xYL99WQ66l82isuzWOE7cQBiENdCTA==" -Body ($body | ConvertTo-Json)
 }
 catch {
     $_ | Out-File "$($PSScriptRoot)\..\Errors\errors.log"
